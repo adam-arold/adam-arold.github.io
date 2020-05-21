@@ -1,0 +1,18 @@
+{
+    "en": {
+        "translation": {
+            "label.urgent.important": "Do",
+            "label.not-urgent.important": "Decide",
+            "label.urgent.not-important": "Delegate",
+            "label.not-urgent.not-important": "Delete"
+        }
+    },
+    "hu": {
+        "translation": {
+            "label.urgent.important": "Tedd",
+            "label.not-urgent.important": "Döntsd El",
+            "label.urgent.not-important": "Delegáld",
+            "label.not-urgent.not-important": "Töröld"
+        }
+    }
+}
