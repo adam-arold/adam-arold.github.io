@@ -1,49 +1,57 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import { v4 as uuid } from "uuid";
-
-const client = axios.create({
-    baseURL: "http://localhost:8080",
-    headers: {
-        "Access-Control-Allow-Origin": "*",
-    },
-});
 
 export default class TodoService {
     private token?: string;
 
     async findAll() {
-        this.checkToken();
-        const result = await client.get("/todos");
+        await this.checkToken();
+        const result = await this.client().get("/todos");
         return result.data;
     }
 
     async findById(id: string) {
-        this.checkToken();
-        const result = await client.get(`/todos/${id}`);
+        await this.checkToken();
+        const result = await this.client().get(`/todos/${id}`);
         return result.data;
     }
 
     async saveTodo(todo: ITodo) {
-        this.checkToken();
+        await this.checkToken();
         const todoWithId = todo;
         todo["id"] = uuid();
-        const result = await client.post("/todos/", todoWithId);
+        const result = await this.client().post("/todos/", todoWithId);
         return result.data;
     }
 
     async completeTodo(todo: ITodo) {
-        this.checkToken();
-        const result = await client.delete(`/todos/${todo.id}`);
+        await this.checkToken();
+        const result = await this.client().delete(`/todos/${todo.id}`);
         return result.data;
+    }
+
+    private client(): AxiosInstance {
+        return axios.create({
+            baseURL: "http://localhost:8080",
+            headers: this.token
+                ? {
+                      "Access-Control-Allow-Origin": "*",
+                      "Authorization": `Bearer ${this.token}`
+                  }
+                : {
+                      "Access-Control-Allow-Origin": "*",
+                  },
+        });
     }
 
     private async checkToken() {
         if (!this.token) {
-            const response = await client.post("/authenticate", {
+            const response = await this.client().post("/authenticate", {
                 username: "user",
                 password: "password",
             });
-            console.log(response.data);
+            this.token = response.data.token;
+            console.log("Got new token", this.token);
         }
     }
 }
