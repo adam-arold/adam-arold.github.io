@@ -1,33 +1,51 @@
 import React from "react";
-import { Redirect } from "@reach/router";
+import { Redirect, RouteComponentProps } from "@reach/router";
 import TodoContext from "./TodoContext";
+import TodoService from "./TodoService";
 
-class Details extends React.Component {
+interface DetailsProps extends RouteComponentProps {
+    id?: string;
+    todoService: TodoService;
+}
 
-    state = {
-        loading: true
-    }
+class Details extends React.Component<DetailsProps> {
+    state: {
+        loading: boolean;
+        redirect: boolean;
+        todo: ITodo | null;
+    } = {
+        loading: true,
+        redirect: false,
+        todo: null,
+    };
+    private todoService: TodoService;
 
-    constructor(props) {
+    constructor(props: DetailsProps) {
         super(props);
         this.todoService = props.todoService;
     }
 
     componentDidMount() {
-        this.todoService.findById(this.props.id).then(todo => {
-            this.setState({
-                todo: todo,
-                loading: false
+        if (this.props.id) {
+            this.todoService.findById(this.props.id).then((todo) => {
+                this.setState({
+                    todo: todo,
+                    loading: false,
+                });
             });
-        })
+        }
     }
 
     render() {
         const todo = this.state.todo;
         if (this.state.redirect) {
-            return <Redirect noThrow={true} to="/" />
+            return <Redirect noThrow={true} to="/" />;
         }
-        return this.state.loading ? <div>Loading</div> : (
+        return this.state.loading ? (
+            <div>Loading</div>
+        ) : todo == null ? (
+            <div>Loading</div>
+        ) : (
             <div className="card">
                 <div className="card-header">
                     <h3>{todo.title}</h3>
@@ -49,19 +67,22 @@ class Details extends React.Component {
                                         onClick={() => {
                                             completeTodo(todo);
                                             this.setState({
-                                                redirect: true
-                                            })
-                                        }}>
-                                        <span className="oi oi-circle-check" title="Complete"></span>
+                                                redirect: true,
+                                            });
+                                        }}
+                                    >
+                                        <span
+                                            className="oi oi-circle-check"
+                                            title="Complete"
+                                        ></span>
                                     </button>
-                                )
+                                );
                             }}
                         </TodoContext.Consumer>
                     </div>
                 </div>
             </div>
-        )
-
+        );
     }
 }
 export default Details;

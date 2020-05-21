@@ -14,7 +14,6 @@ class Details extends React.Component {
     }
 
     componentDidMount() {
-        throw Error();
         this.todoService.findById(this.props.id).then(todo => {
             this.setState({
                 todo: todo,

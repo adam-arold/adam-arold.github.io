@@ -1166,3 +1166,91 @@
     // ...
     ```
 
+## Typescript
+
+-   Install Typescript: `npm install -D typescript`
+-   Initialize Typescript: `npx tsc --init`
+-   In `tsconfig.json`:
+    -   Change target to `es2018`
+    -   Change `"jsx"` to `"jsx": "react"`
+-   Install TS headers for our projects:
+    ```bash
+    npm install -D @types/react @types/react-dom @types/reach__router @types/yup @types/uuid
+    ```
+-   
+-   Note that we can keep the `.js` files, we don't have to migrate everything at once
+-   Migrate `Todo.tsx`
+-   Use `FunctionComponent<IProps>` like this:
+    ```ts
+    interface IProps {
+        todo: ITodo;
+    }
+
+    interface ITodo {
+        id: string;
+        urgency: string;
+        importance: string;
+        title: string;
+        description: string;
+    }
+    ```
+-   Use `Error` and `ErrorInfo` in `ErrorBoundary`
+-   Use `id: string` in `TodoService`
+-   Use this for `TextInput`:
+    ```ts
+    interface TextInputProps extends FieldInputProps<""> {
+        label: string;
+    }
+    ```
+-   Use this for `SelectInput`:
+    ```ts
+    interface SelectInputProps extends FieldInputProps<""> {
+        label: string;
+        options: { [name: string]: string };
+    }
+    ```
+-   In `Details` use:
+    ```ts
+    interface DetailsProps : RouteComponentProps {
+        id?: string,
+        todoService: TodoService
+    }
+    ```
+    and
+    ```ts
+    state: {
+        loading: boolean;
+        redirect: boolean;
+        todo: ITodo | null;
+    } = {
+        loading: true,
+        redirect: false,
+        todo: null,
+    };
+    ```
+-   Use this for `Box`:
+    ```ts
+    interface BoxProps {
+        urgency: string;
+        importance: string;
+        label: string;
+        todos: ITodo[];
+    }
+    ```
+-   In `Portal`:
+    -   Refactor `useRef`: `const elRef = useRef(document.createElement("div"));`
+    -   Add check for `portal`:
+        ```ts
+        if(!portal) {
+            return;
+        }
+        ```
+    -   Wrap `portal.removeChild` in `{}`
+-   In `TaskCreator` use this:
+    ```ts
+    interface TaskCreatorProps {
+        onSubmit: (todo: ITodo) => void
+    }
+    ```
+    and also add an `id` to the `todo`
+-   Fix `App.js` to `App.tsx`
