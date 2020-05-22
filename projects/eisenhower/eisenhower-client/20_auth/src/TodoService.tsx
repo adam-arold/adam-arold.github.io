@@ -1,35 +1,57 @@
-import axios from "axios";
+import axios, { AxiosInstance } from "axios";
 import { v4 as uuid } from "uuid";
 
-const client = axios.create({
-    baseURL: "http://localhost:8080/todos",
-    headers: {
-        'Access-Control-Allow-Origin': '*',
-    }
-});
-
 export default class TodoService {
-
+    private token?: string;
 
     async findAll() {
-        const result = await client.get("/");
+        await this.checkToken();
+        const result = await this.client().get("/todos");
         return result.data;
     }
 
     async findById(id: string) {
-        const result = await client.get(`/${id}`);
+        await this.checkToken();
+        const result = await this.client().get(`/todos/${id}`);
         return result.data;
     }
 
     async saveTodo(todo: ITodo) {
+        await this.checkToken();
         const todoWithId = todo;
         todo["id"] = uuid();
-        const result = await client.post("/", todoWithId);
+        const result = await this.client().post("/todos/", todoWithId);
         return result.data;
     }
 
     async completeTodo(todo: ITodo) {
-        const result = await client.delete(`/${todo.id}`);
+        await this.checkToken();
+        const result = await this.client().delete(`/todos/${todo.id}`);
         return result.data;
+    }
+
+    private client(): AxiosInstance {
+        return axios.create({
+            baseURL: "http://localhost:8080",
+            headers: this.token
+                ? {
+                      "Access-Control-Allow-Origin": "*",
+                      "Authorization": `Bearer ${this.token}`
+                  }
+                : {
+                      "Access-Control-Allow-Origin": "*",
+                  },
+        });
+    }
+
+    private async checkToken() {
+        if (!this.token) {
+            const response = await this.client().post("/authenticate", {
+                username: "user",
+                password: "password",
+            });
+            this.token = response.data.token;
+            console.log("Got new token", this.token);
+        }
     }
 }
