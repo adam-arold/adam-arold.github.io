@@ -110,3 +110,20 @@ name: kafka-vs-jms
 - Kafka esetében a consumer
 
 ---
+
+## Polyglot
+
+---
+
+## Polyglot
+
+- JMS Java-val működik
+
+---
+
+## Polyglot
+
+- JMS Java-val működik
+- Kafka-hoz sok nyelven van kliens
+
+---

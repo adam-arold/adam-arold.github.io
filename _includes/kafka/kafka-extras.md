@@ -270,6 +270,44 @@ WHERE u.level = 'Platinum';
 
 ---
 
+
+## Kafka Stream Példa
+
+```java
+final Serde<String> stringSerde = Serdes.String();
+final Serde<Long> longSerde = Serdes.Long();
+
+KStream<String, String> textLines = builder.stream("streams-plaintext-input", Consumed.with(stringSerde, stringSerde));
+
+KTable<String, Long> wordCounts = textLines
+    .flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
+    .groupBy((key, value) -> value)
+    .count();
+
+wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
+```
+
+---
+
+
+## Kafka Stream Példa
+
+```java
+final Serde<String> stringSerde = Serdes.String();
+final Serde<Long> longSerde = Serdes.Long();
+
+KStream<String, String> textLines = builder.stream("streams-plaintext-input", Consumed.with(stringSerde, stringSerde));
+
+KTable<String, Long> wordCounts = textLines
+    .flatMapValues(value -> Arrays.asList(value.toLowerCase().split("\\W+")))
+    .groupBy((key, value) -> value)
+    .count();
+
+wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, longSerde));
+```
+
+---
+
 ## Confluent Cloud
 
 ---
@@ -290,5 +328,25 @@ WHERE u.level = 'Platinum';
 ## Schema Registry
 
 
+---
+
+## Schema Registry
+
+- AVRO
+
+---
+
+## Schema Registry
+
+- AVRO
+- JSON
+
+---
+
+## Schema Registry
+
+- AVRO
+- JSON
+- Protobuf
 
 ---
