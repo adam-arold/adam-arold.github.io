@@ -350,3 +350,7 @@ wordCounts.toStream().to("streams-wordcount-output", Produced.with(stringSerde, 
 - Protobuf
 
 ---
+
+# Kérdések
+
+---
