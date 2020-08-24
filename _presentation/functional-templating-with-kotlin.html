@@ -1,0 +1,674 @@
+---
+layout: presentations
+title: "Functional Templating With Kotlin"
+---
+
+layout: true
+
+---
+
+class: inverse, center, middle
+
+# Functional Templating With Kotlin
+
+---
+
+## A Few Words on `kotlinx.html`
+
+---
+
+### Gives Us a DSL
+
+```kotlin
+html {
+    head {
+        title(title)
+    }
+    body {
+        div {
+            +"content"
+        }
+    }
+}
+```
+
+---
+
+### With the Full Power of Kotlin
+
+```kotlin
+div {
+    if (persons.isEmpty()) {
+        p { +"There are no persons." }
+    } else {
+        ul {
+            persons.forEach { person ->
+                li {
+                    +"${person.name}(${person.age})"
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+### In a Small Package
+
+```kotlin
+fun main() {
+    val sb = StringBuilder()
+    val tagConsumer = sb.appendHTML()
+    with(tagConsumer) {
+        html {
+            body {
+                div {
+                    + "Hello"
+                }
+            }
+        }
+    }
+    println(sb.toString())
+}
+```
+
+---
+
+### And Multiplatform Support
+
+---
+
+### But No Templating!
+
+---
+
+## How Does a Template Look Like?
+
+```xml
+<table>
+    <tbody>
+        <tr th:each="prod: ${allProducts}">
+            <td th:text="${prod.name}">Oranges</td>
+            <td th:text="${#numbers.formatDecimal(prod.price, 1, 2)}">0.99</td>
+        </tr>
+    </tbody>
+</table>
+```
+
+---
+
+## A Naive Implementation
+
+```kotlin
+fun <T> content(builder: TagConsumer<*>.(T) -> Unit) = builder
+
+abstract class Template<T> {
+
+    abstract val root: TagConsumer<*>.(T) -> Unit  // user overrides this
+
+    fun render(data: T): String {
+        val sb = StringBuilder()
+        val tagConsumer = sb.appendHTML()
+        root(tagConsumer, data)                    // we bind and render here
+        return sb.toString()                       // and return the rendered HTML
+    }
+}
+```
+
+---
+
+### Usage
+
+```kotlin
+class Homepage : Template<String>() {
+    override val root = content<String> { title ->
+        html {
+            head {
+                title(title)
+            }
+            body {
+                div {
+                    +"content"
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+### Reusable template parts: Partials
+
+
+
+```kotlin
+interface Includable<T> {
+
+    val root: TagConsumer<*>.(T) -> Unit
+
+    fun render(data: T): String {
+        val sb = StringBuilder()
+        val tagConsumer = sb.appendHTML()
+        root(tagConsumer, data)
+        return sb.toString()
+    }
+}
+```
+
+---
+
+### Partial and Template
+
+```kotlin
+abstract class Partial<T> : Includable<T>
+
+abstract class Template<T> : Includable<T> {
+
+    fun <U> TagConsumer<*>.include(includable: Includable<U>, data: U) {
+        includable.root(this, data)
+    }
+}
+```
+
+---
+
+### Creating a Header
+
+```kotlin
+object Head : Partial<String>() {
+    override val root = content<String> { title ->
+        head {
+            title(title)
+        }
+    }
+}
+```
+
+---
+
+### Using Our Partial
+
+```kotlin
+class Homepage : Template<String>() {
+    override val root = content<String> {
+        html {
+            include(Head, "title")
+            body {
+                div {
+                    +"content"
+                }
+            }
+        }
+    }
+}
+```
+
+---
+
+## The Killer Feature: Layouts!
+
+---
+
+### The Implementation
+
+```kotlin
+abstract class Layout<T> {                  // not Includable!
+
+    abstract fun <U> content(               // no root variable
+        builder: TagConsumer<*>.(U) -> Unit,
+        data: Pair<T, U>
+    ): TagConsumer<*>.(T) -> Unit 
+
+    fun <U> TagConsumer<*>.include(includable: Includable<U>, data: U) {
+        includable.root(this, data)         // custom include
+    }
+
+    fun <U> render(
+        consumer: TagConsumer<*>,
+        template: TagConsumer<*>.(U) -> Unit,
+        data: Pair<T, U>
+    ) {
+        // we create the layout builder, then we render it with our consumer
+        content(template, data)(consumer, data.first)
+    }
+}
+```
+
+---
+
+### Tweaking the Template
+
+```kotlin
+abstract class Template<L, T>(
+    private val layout: Layout<L>           // the layout is a parameter
+) : Includable<Pair<L, T>> {
+
+    // ...
+
+    override fun render(data: Pair<L, T>): String {
+        val sb = StringBuilder()
+        val consumer = sb.appendHTML()
+
+        layout.render(consumer, content {   // a little hack
+            root(consumer, data)
+        }, data)
+        
+        return sb.toString()
+    }
+}
+```
+
+---
+
+## We're Done!
+
+#### Right?
+
+---
+
+## Not Quite...
+
+---
+
+## Not Quite...
+
+- Hard to extend & maintain
+
+---
+
+## Not Quite...
+
+- Hard to extend & maintain
+- Built on top of assumptions
+
+---
+
+## Not Quite...
+
+- Hard to extend & maintain
+- Built on top of assumptions
+- Do we need classes at all?
+
+---
+
+## What Is a Template?
+
+> The template method is a method that defines the skeleton of an operation in terms of a number of high-level steps. […] The intent of the template method is to define the overall structure of the operation, while allowing subclasses to refine, or redefine, certain steps.
+> 
+> – Wikipedia
+
+---
+
+## What Is a Template?
+
+- Binds dynamic data
+
+---
+
+## What Is a Template?
+
+- Binds dynamic data
+- To static markup (HTML)
+
+---
+
+## What Is a Template?
+
+- Binds dynamic data
+- To static markup (HTML)
+
+---
+
+## What Is a Template?
+
+- Binds dynamic data
+- To static markup (HTML)
+- Nestable
+
+---
+
+## Putting it Together
+
+```kotlin
+fun <T> template(                                 
+    builder: TagConsumer<*>.(data: T) -> Unit     
+): TagConsumer<*>.(data: T) -> Unit = { data ->   
+    builder(data)                                    
+}
+```
+
+---
+
+## Putting it Together
+
+```kotlin
+fun <T> template(                                 // 1
+    builder: TagConsumer<*>.(data: T) -> Unit     
+): TagConsumer<*>.(data: T) -> Unit = { data ->   
+    builder(data)                                    
+}
+```
+
+1. Define the type of the data we want to bind
+
+---
+
+## Putting it Together
+
+```kotlin
+fun <T> template(                                 // 1
+    builder: TagConsumer<*>.(data: T) -> Unit     // 2
+): TagConsumer<*>.(data: T) -> Unit = { data ->   
+    builder(data)                                    
+}
+```
+
+1. *Define the type of the data we want to bind*
+2. Define how to apply the data in the context of a TagConsumer
+
+---
+
+## Putting it Together
+
+```kotlin
+fun <T> template(                                 // 1
+    builder: TagConsumer<*>.(data: T) -> Unit     // 2
+): TagConsumer<*>.(data: T) -> Unit = { data ->   // 3
+    builder(data)                                    
+}
+```
+
+1. *Define the type of the data we want to bind*
+2. *Define how to apply the data in the context of a TagConsumer*
+3. Return a function that creates said binding
+
+---
+
+## Putting it Together
+
+```kotlin
+// give it a name
+typealias TemplateBuilder<T> = TagConsumer<*>.(data: T) -> Unit
+
+fun <T> template(
+    builder: TemplateBuilder<T>
+): TemplateBuilder<T> = { data ->
+    builder(data)
+}
+```
+
+---
+
+## Building HTML
+
+```kotlin
+typealias TemplateRenderer = TagConsumer<*>.() -> Unit
+
+fun buildHtml(renderer: TemplateRenderer) = StringBuilder().apply {
+    appendHTML().renderer()
+}.toString()
+```
+
+---
+
+## Creating Functional Templates
+
+```kotlin
+val heading = template<String> { title ->
+    head {
+        title(title)
+    }
+}
+val homepage = template<String> { title ->
+    html {
+        heading(title)
+        body { +"hello" }
+    }
+}
+fun main() {
+    val html = buildHtml {
+        homepage("title")
+    }
+    println(html)
+}
+```
+
+---
+
+## How Does This Work?
+
+---
+
+## How Does This Work?
+
+- `TagConsumer` is the core object
+
+---
+
+## How Does This Work?
+
+- *`TagConsumer` is the core object*
+- Wraps an `Appendable`
+
+---
+
+## How Does This Work?
+
+- *`TagConsumer` is the core object*
+- *Wraps an `Appendable`*
+- Everything else needs `TagConsumer` as its context
+
+---
+
+## How Does This Work?
+
+- *`TagConsumer` is the core object*
+- *Wraps an `Appendable`*
+- *Everything else needs `TagConsumer` as its context*
+- Builder functions are called in the proper order (thanks, `kotlinx.html`)
+
+---
+
+## How Does This Work?
+
+- *`TagConsumer` is the core object*
+- *Wraps an `Appendable`*
+- *Everything else needs `TagConsumer` as its context*
+- *Builder functions are called in the proper order* (thanks, `kotlinx.html`)
+- Parameters are passed in `buildHtml`
+
+---
+
+## Layouts Revisited
+
+#### How is a Layout different?
+
+---
+
+## What is a Layout?
+
+- A `Template` binds data to markup
+
+---
+
+## What is a Layout?
+
+- *A `Template` binds data to markup*
+- A `Layout` does the same...
+
+---
+
+## What is a Layout?
+
+- *A `Template` binds data to markup*
+- *A `Layout` does the same...*
+- But the additional data is a `Template`!
+
+---
+
+## Implementing the Layout Again
+
+```kotlin
+typealias LayoutBuilder<T> = TagConsumer<*>.(
+    data: T,
+    renderer: TemplateRenderer
+) -> Unit
+
+fun <T> layout(
+    builder: LayoutBuilder<T>
+): LayoutBuilder<T> = { data, renderer ->
+    builder(data, renderer)
+}
+```
+
+---
+
+## Implementing the Layout Again
+
+```kotlin
+typealias LayoutBuilder<T> = TagConsumer<*>.(
+    data: T,
+    renderer: TemplateRenderer
+) -> Unit                                          // 1
+
+fun <T> layout(
+    builder: LayoutBuilder<T>
+): LayoutBuilder<T> = { data, renderer ->
+    builder(data, renderer)
+}
+```
+
+1. Binds `data` and `renderer` to the layout in the context of a `TagConsumer`
+
+---
+
+## Implementing the Layout Again
+
+```kotlin
+typealias LayoutBuilder<T> = TagConsumer<*>.(
+    data: T,
+    renderer: TemplateRenderer
+) -> Unit                                          // 1
+
+fun <T> layout(
+    builder: LayoutBuilder<T>
+): LayoutBuilder<T> = { data, renderer ->          // 2
+    builder(data, renderer)
+}
+```
+
+1. *Binds `data` and `renderer` to the layout in the context of a `TagConsumer`*
+2. Returns a function that when called executes the binding
+
+---
+
+## Implementing the Layout Again
+
+```kotlin
+typealias LayoutBuilder<T> = TagConsumer<*>.(
+    data: T,
+    renderer: TemplateRenderer
+) -> Unit                                          
+
+fun <T> layout(
+    builder: LayoutBuilder<T>
+): LayoutBuilder<T> = { data, renderer ->          
+    builder(data, renderer)
+}
+```
+
+#### Why `TemplateRenderer` instead of `TemplateBuilder`?
+
+---
+
+## Implementing the Layout Again
+
+```kotlin
+typealias LayoutBuilder<T> = TagConsumer<*>.(
+    data: T,
+    renderer: TemplateRenderer
+) -> Unit                                          
+
+fun <T> layout(
+    builder: LayoutBuilder<T>
+): LayoutBuilder<T> = { data, renderer ->          
+    builder(data, renderer)
+}
+```
+
+#### Why `TemplateRenderer` instead of `TemplateBuilder`?
+
+Has no business binding a `Template`!
+
+---
+
+## An Actual Layout
+
+```kotlin
+val defaultLayout = layout<String> { title, template ->
+    html {
+        head(title)
+        body {
+            div {
+                template()
+            }
+        }
+    }
+}
+```
+
+---
+
+## Using Layouts
+
+```kotlin
+val items = listOf(
+    Item("one"), Item("two"), Item("three")
+)
+
+defaultLayout("title") {
+    homepage(items)
+}
+```
+
+---
+
+## Conclusion
+
+---
+
+## Conclusion
+
+- Thinking outside of the box helps
+
+---
+
+## Conclusion
+
+- *Thinking outside of the box helps*
+- Assumptions are bad
+
+---
+
+## Conclusion
+
+- *Thinking outside of the box helps*
+- *Assumptions are bad*
+- A functional approach often pays off
+
+---
+
+## Conclusion
+
+- *Thinking outside of the box helps*
+- *Assumptions are bad*
+- *A functional approach often pays off*
+- Design from first principles!
+
+---
+
+
+
+
