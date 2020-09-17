@@ -189,6 +189,15 @@
   max-width: 20rem;
 }
 
+
+.remark-slide-content img {
+  width: 80%;
+}
+
+.remark-slide-content em {
+  opacity: 0.5;
+}
+
 /* FOOTER */
 
 .remark-slide-content .footer {

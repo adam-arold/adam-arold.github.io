@@ -1,14 +1,26 @@
 ---
-layout: presentations
-permalink: /presentations
+layout: default
+permalink: /presentations.html
 ---
 
 <h1>Prezentációk</h1>
 
-<div>
-    {% for item in site.presentation %}
+{% assign hu_pres = site.presentation | where: "lan", "hu" %}
+{% assign en_pres = site.presentation | where: "lan", "en" %}
+
+<h2>Magyar</h2>
+<ul>
+    {% for item in hu_pres %}
     <li>
         <a href="{{item.url}}">{{item.title}}</a>
     </li>
     {% endfor %}
-</div>
+</ul>
+<h2>English</h2>
+<ul>
+{% for item in en_pres %}
+<li>
+    <a href="{{item.url}}">{{item.title}}</a>
+</li>
+{% endfor %}
+</ul>
