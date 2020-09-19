@@ -1,4 +1,4 @@
-name: gradle
+name: docker
 
 # {{ include.title }}
 ## {{ include.subtitle }}

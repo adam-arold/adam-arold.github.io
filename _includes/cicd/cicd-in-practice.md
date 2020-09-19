@@ -29,20 +29,14 @@ name: cicd-in-practice
 
 ---
 
-## Modularizáció
-
-- OSGi
-- Mikroszervízek
-
----
-
 ## Konfiguráció
 
-- Környezeti változók
-- Miért nem jók a profilok
-
 ---
 
-## Monitorozás és Rollback
+## Projekt Előkészítése
+
+```
+git clone https://github.com/AppCraft-Projects/ci-cd.git
+```
 
 ---
