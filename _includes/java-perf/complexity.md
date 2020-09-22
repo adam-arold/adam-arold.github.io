@@ -30,17 +30,17 @@ name: complexity
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4 - 6x^3 + 21`
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4 - 6x^3 + 21`
 
@@ -51,7 +51,7 @@ Ha `x = 1`
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4 - 6x^3 + 21`
 
@@ -61,7 +61,7 @@ Ha `x = 2`
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4 - 6x^3 + 21`
 
@@ -71,7 +71,7 @@ Ha `x = 8`
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4 - 6x^3 + 21`
 
@@ -81,7 +81,7 @@ Ha `x = 20`
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4`
 
@@ -89,7 +89,7 @@ A leggyorsabban növekvő tagon kívül minden eldobható
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `2x^4`
 
@@ -102,7 +102,7 @@ Nincs nagyságrendi változás
 
 ---
 
-## Példa Komplexitásra
+## Példa
 
 `x^4`
 
@@ -177,7 +177,7 @@ public void iterate(List<String> names) {
     System.out.println("Iterating over names.");
     System.out.printf("Name count: %d%n", names.size());    
 
-    names.forEach(System.out::println);
+    names.forEach(System.out::println);                     // n
 }
 ```
 
@@ -194,7 +194,7 @@ A komplexitás `O(n)`
 - Konstans: `O(1)`
 
 ```java
-
+System.out.println("Hello."); // O(1)
 ```
 
 ---
@@ -204,7 +204,9 @@ A komplexitás `O(n)`
 - Logaritmikus: `O(log n)`
 
 ```java
+Integer[] numbers = {1, 2, 3, 4, 5, 6};
 
+Arrays.binarySearch(numbers, 5); // O(log n)
 ```
 
 ---
@@ -214,7 +216,7 @@ A komplexitás `O(n)`
 - Lineáris: `O(n)`
 
 ```java
-
+Arrays.asList(1, 2, 3, 4, 5, 6).forEach(System.out::println); // O(n)
 ```
 
 ---
@@ -224,27 +226,28 @@ A komplexitás `O(n)`
 - Linearitmikus: `O(n log n)`
 
 ```java
-
+Stream.of(1, 2, 3, 4, 5, 6).sorted(); // O(n log n)
 ```
 
 ---
 
 ## Gyakori Esetek
 
-- Négyzetes: `O(n^2)`
+- Négyzetes (polinóm): `O(n^2)`
 
 ```java
+// insertion sort
+Integer[] numbers = {6, 1, 3, 8, 3, 2};
 
-```
-
----
-
-## Gyakori Esetek
-
-- Polinom: `O(n^c)`
-
-```java
-
+for (int i = 1; i < numbers.length; ++i) { // O(n^2)
+    int key = numbers[i];
+    int j = i - 1;
+    while (j >= 0 && numbers[j] > key) {
+        numbers[j + 1] = numbers[j];
+        j = j - 1;
+    }
+    numbers[j + 1] = key;
+}
 ```
 
 ---
@@ -254,7 +257,13 @@ A komplexitás `O(n)`
 - Exponenciális: `O(c^n)`
 
 ```java
-
+int fib(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
 ```
 
 ---
@@ -264,7 +273,13 @@ A komplexitás `O(n)`
 - Faktoriális: `O(n!)`
 
 ```java
-
+long factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
 ```
 
 ---

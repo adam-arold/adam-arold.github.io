@@ -7,31 +7,30 @@
         - Streaming
         - Memória Optimalizálás
         - JVM Tuning
-
-- [ ] Átvezető: Aszimptotikus komplexitás
+- [x] Átvezető: Aszimptotikus komplexitás                                           40         
     - Pár ismert algoritmus és adatstruktúra szemléltetése
-- [ ] A Megfelelő Algoritmus Kiválasztása
-    - Divide & Conquer
-      Rekurzió és dinamikus programozás, részplroblémák egyesítése
-      *Példa*: fibonacci
-    - Általánosítás
-      Létezik-e egy általános algoritmus, aminek speciális esete a problémánk?
-      *Példa*:
-    - Adatstruktúrák
-      Alkalmazható a problémánkra egy létező adatstruktúra?
-      *Példa*: Trie szöveges keresésre
-    - Egyszerűsítés
-      Biztos, hogy a *legjobb* megoldást keressük?
-      *Esettanulmány*: Liligo 49-es matrix
-    - Gráfelmélet
-      Alkalmazható a problémára egy gráfelméleti megoldás?
-      *Esettanulmány*: Kérdőívkitöltő programhoz topológiai rendezés
-    - Párhuzamosítás
-      Szétbontható-e a probléma párhuzamosítható feladatokra?
-      *Példa*: szövegfeldolgozás (Map reduce?)
-    - Cachelés
-      Elmenthetők-e részeredmények?
-      *Példa*: Statikus HTML tartalmak
+- [x] A Megfelelő Algoritmus Kiválasztása                                           65  
+    - [x] Divide & Conquer                                                          20
+          Rekurzió és dinamikus programozás, részplroblémák egyesítése
+          *Példa*: fibonacci
+    - [x] Általánosítás                                                             10
+          Létezik-e egy általános algoritmus, aminek speciális esete a problémánk?
+          *Példa*:
+    - [x] Adatstruktúrák                                                            5  
+          Alkalmazható a problémánkra egy létező adatstruktúra?
+          *Példa*: Trie szöveges keresésre
+    - [x] Egyszerűsítés                                                             10
+          Biztos, hogy a *legjobb* megoldást keressük?
+          *Esettanulmány*: Liligo 49-es matrix
+    - [x] Gráfelmélet                                                               10
+          Alkalmazható a problémára egy gráfelméleti megoldás?
+          *Esettanulmány*: Kérdőívkitöltő programhoz topológiai rendezés
+    - [x] Párhuzamosítás                                                            5
+          Szétbontható-e a probléma párhuzamosítható feladatokra?
+          *Példa*: szövegfeldolgozás (Map reduce?)
+    - [x] Cachelés                                                                  5
+          Elmenthetők-e részeredmények?
+          *Példa*: Statikus HTML tartalmak
 - [ ] Adatstruktúrák
     - Keresés Rendezett Adatstruktúrákban
     - `LinkedList` vs `ArrayList`
@@ -42,10 +41,13 @@
     - Gráfok használata
     - Keresőfák
 - [ ] Párhuzamosítás
-    - `Executor` használata: `Future`, `Callable`, `CompletableFuture`
-    - Konkurrens adatstruktúrák: `ConcurrentMap`, `BlockingQueue`, `CopyOnWriteArrayList`
+    - `Executor` használata: 
+      `Future`, `Callable`, `CompletableFuture`
+    - Konkurrens adatstruktúrák:
+      `ConcurrentMap`, `BlockingQueue`, `CopyOnWriteArrayList`
     - Perzisztens adatstruktúrák (HAMT, CHAMP)
-    - Concurrency primitívek: `Lock`, `Condition`, `Atomic*`, `CountDownLatch`, `CyclicBarrier`
+    - Concurrency primitívek:
+      `Lock`, `Condition`, `Atomic*`, `CountDownLatch`, `CyclicBarrier`
     - Deadlock, livelock, race condition
     - Lockoljunk vagy ne lockoljunk?
     - Load Balancing
@@ -56,7 +58,8 @@
     - `Publisher`, `Subscriber`, `Flow`, `Processor`
     - Aszinkron programozás
     - Reaktív Fejlesztés
-    - `InputStream`, `OutputStream`: (Esettanulmány: excel fájlok generálása JIRA pluginben)
+    - `InputStream`, `OutputStream`:
+      (Esettanulmány: excel fájlok generálása JIRA pluginben)
 - [ ] Memória Optimalizálás
     - A Java memóriamodell
     - Objektumok helyfoglalása
@@ -115,3 +118,4 @@
 - [ ] Egyéb
     - Frameworkök összehasonlítása
     - Imperatív vs Funkcionális
+    - Immutability
