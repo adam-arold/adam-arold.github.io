@@ -74,9 +74,23 @@ int fib(int n) {
 `O(2^n)` komplexitás!
 Mi lehet a megoldás?
 
-???
+---
 
-Dynamic programming
+## Példa
+
+```java
+int fib(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return fib(n - 1) + fib(n - 2);
+    }
+}
+```
+
+`O(2^n)` komplexitás! Mi lehet a megoldás?
+
+A **dinamikus programozás!**
 
 ---
 
@@ -144,9 +158,13 @@ Alkalmazható a problémánkra egy létező adatstruktúra?
 
 Biztos, hogy a **legjobb** megoldást keressük?
 
-???
+---
 
-Liligo 49
+## Egyszerűsítés
+
+Biztos, hogy a **legjobb** megoldást keressük?
+
+**Esettanulmány**: Utazási mátrix
 
 ---
 
@@ -158,9 +176,13 @@ Liligo 49
 
 Alkalmazható a problémára egy gráfelméleti megoldás?
 
-???
+---
 
-IFORM
+## Gráfelmélet
+
+Alkalmazható a problémára egy gráfelméleti megoldás?
+
+**Esettanulmány**: Kérdőív kitöltő program
 
 ---
 
@@ -178,9 +200,11 @@ Szétbontható-e a probléma párhuzamosítható feladatokra?
 
 Szétbontható-e a probléma párhuzamosítható feladatokra?
 
-???
+**Példa**: szövegfeldolgozás (Map reduce?)
 
-*Példa*: szövegfeldolgozás (Map reduce?)
+---
+
+## Cachelés
 
 ---
 
@@ -188,9 +212,14 @@ Szétbontható-e a probléma párhuzamosítható feladatokra?
 
 Elmenthetők-e részeredmények?
 
-???
 
-*Példa*: Statikus HTML tartalmak
+---
+
+## Cachelés
+
+Elmenthetők-e részeredmények?
+
+**Példa**: Statikus HTML tartalmak
 
 ---
 

@@ -5,7 +5,7 @@ permalink: /presentations.html
 
 <h1>Prezentációk</h1>
 
-{% assign pres = site.presentation | where: "published", "true" %}
+{% assign pres = site.presentation | where: "listed", "true" %}
 
 {% assign hu_pres = pres | where: "lan", "hu" %}
 {% assign en_pres = pres | where: "lan", "en" %}

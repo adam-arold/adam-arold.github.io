@@ -1,4 +1,4 @@
-- [x] Bevezető                                                                      25
+- [x] Bevezető                                                                          25
     - Mi is az a performancia?
     - Problémakategóriák
         - Algoritmus
@@ -7,9 +7,9 @@
         - Streaming
         - Memória Optimalizálás
         - JVM Tuning
-- [x] Átvezető: Aszimptotikus komplexitás                                           40         
+- [x] Átvezető: Aszimptotikus komplexitás                                               40         
     - Pár ismert algoritmus és adatstruktúra szemléltetése
-- [x] A Megfelelő Algoritmus Kiválasztása                                           65  
+- [x] A Megfelelő Algoritmus Kiválasztása                                               65  
     - [x] Divide & Conquer                                                          20
           Rekurzió és dinamikus programozás, részplroblémák egyesítése
           *Példa*: fibonacci
@@ -31,51 +31,51 @@
     - [x] Cachelés                                                                  5
           Elmenthetők-e részeredmények?
           *Példa*: Statikus HTML tartalmak
-- [ ] Adatstruktúrák
-    - Keresés Rendezett Adatstruktúrákban
-    - `LinkedList` vs `ArrayList`
-    - `TreeMap` felhasználási területei
-    - Keresés `List` vs `Map`
-    - Lookup-ok létrehozása
-    - Halmazok (`Set`) használata, metszetek és úniók
-    - Gráfok használata
-    - Keresőfák
-- [ ] Párhuzamosítás
-    - `Executor` használata: 
+- [ ] Adatstruktúrák                                                                    120
+    - Keresés Rendezett Adatstruktúrákban                                           10      
+    - `LinkedList` vs `ArrayList`                                                   15
+    - `Tree*` vs `Collections.sort`                                                 15
+    - Keresés `List` vs `Map`                                                       15
+    - Lookup-ok létrehozása                                                         15
+    - Halmazok (`Set`) használata, metszetek és úniók                               10
+    - Gráfok használata                                                             15
+    - Keresőfák                                                                     15
+- [ ] Párhuzamosítás                                                                    165
+    - `Executor` használata:                                                        30
       `Future`, `Callable`, `CompletableFuture`
-    - Konkurrens adatstruktúrák:
+    - Konkurrens adatstruktúrák:                                                    20
       `ConcurrentMap`, `BlockingQueue`, `CopyOnWriteArrayList`
-    - Perzisztens adatstruktúrák (HAMT, CHAMP)
-    - Concurrency primitívek:
+    - Perzisztens adatstruktúrák (HAMT, CHAMP)                                      20
+    - Concurrency primitívek:                                                       20
       `Lock`, `Condition`, `Atomic*`, `CountDownLatch`, `CyclicBarrier`
-    - Deadlock, livelock, race condition
-    - Lockoljunk vagy ne lockoljunk?
-    - Load Balancing
-    - `synchronized` variációk vs natív implementációk (`ConcurrentHashMap`)
-    - `Date` nem thread safe
-- [ ] Streaming
-    - Stream API
-    - `Publisher`, `Subscriber`, `Flow`, `Processor`
-    - Aszinkron programozás
-    - Reaktív Fejlesztés
-    - `InputStream`, `OutputStream`:
+    - Deadlock, livelock, race condition                                            15
+    - Lockoljunk vagy ne lockoljunk?                                                15
+    - Load Balancing                                                                15
+    - `synchronized` variációk vs natív implementációk (`ConcurrentHashMap`)        20
+    - `Date` nem thread safe                                                        10
+- [ ] Streaming                                                                         100
+    - Stream API                                                                    25
+    - `Publisher`, `Subscriber`, `Flow`, `Processor`                                15
+    - Aszinkron programozás                                                         15
+    - Reaktív Fejlesztés                                                            20
+    - `InputStream`, `OutputStream`:                                                25
       (Esettanulmány: excel fájlok generálása JIRA pluginben)
-- [ ] Memória Optimalizálás
-    - A Java memóriamodell
-    - Objektumok helyfoglalása
-    - Off-heap adatstruktúrák
+- [ ] Memória Optimalizálás                                                             55
+    - A Java memóriamodell                                                          20
+    - Objektumok helyfoglalása                                                      20
+    - Off-heap adatstruktúrák                                                       15
 - [ ] JVM Tuning
-    - JVM részeinek áttekintése: runtime, garbage collector, JIT
-    - Tuningolás Módszertan
+    - JVM részeinek áttekintése: runtime, garbage collector, JIT                    20
+    - Tuningolás Módszertan                                                         15
         - Bottleneckek megkeresése
         - A legjelentősebb javítása
         - Ismétlés
-    - Mit Figyeljünk: CPU, Memória, I/O
-    - Mit Tuningoljunk?
+    - Mit Figyeljünk: CPU, Memória, I/O                                             10
+    - Mit Tuningoljunk?                                                             10
         - Párhuzamosítsuk ami futhat a háttérben
         - Streameljük az adatot
         - Cacheljük amit lehet (és érdemes)
-    - Profiling
+    - Profiling                                                                     45
         - Eszközök:
             - VisualVM
             - YourKit
@@ -84,7 +84,7 @@
             - GC után megmaradt objektumok a memóriában
             - Új objektumok
             - Memóriahasználat
-    - Technikák
+    - Technikák                                                                     120
         - Object Pooling
         - Weak Reference
         - Lazy Initialization
@@ -109,13 +109,13 @@
         - I/O párhuzamosítása
         - Kerüljük a fölösleges szortolást
         - Megfelelő szortolás használata
-    - JVM tuning:
-        - GC választása
-        - Memória tuning
-        - Startup paraméterek
-        - Startup idő optimizálása
-    - Alternatív virtuális gépek (GraalVM)
-- [ ] Egyéb
+    - JVM tuning:                                                                       60
+        - GC választása                                                             15
+        - Memória tuning                                                            15
+        - Startup paraméterek                                                       15
+        - Startup idő optimizálása                                                  15
+    - Alternatív virtuális gépek (GraalVM és Quarkus)                               20
+- [ ] Egyéb                                                                         120
     - Frameworkök összehasonlítása
     - Imperatív vs Funkcionális
     - Immutability
