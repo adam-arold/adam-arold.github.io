@@ -31,7 +31,7 @@
     - [x] Cachelés                                                                  5
           Elmenthetők-e részeredmények?
           *Példa*: Statikus HTML tartalmak
-- [ ] Adatstruktúrák                                                                    120
+- [x] Adatstruktúrák                                                                    120
     - Keresés Rendezett Adatstruktúrákban                                           10      
     - `LinkedList` vs `ArrayList`                                                   15
     - `Tree*` vs `Collections.sort`                                                 15
