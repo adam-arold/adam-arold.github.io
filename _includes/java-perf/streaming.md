@@ -442,18 +442,6 @@ System.out.println(supplyAsync());
 
 ## Aszinkron Programozás
 
-Eredmény felhasználása
-
-```java
-supplyAsync()
-    .thenAccept(System.out::println)
-    .get();
-```
-
----
-
-## Aszinkron Programozás
-
 Eredmény felhasználása.
 
 ```java
@@ -630,18 +618,18 @@ Feliratkozás kézzel
 
 ```java
 Flux.just(1, 2, 3, 4)
-        .subscribe(new Subscriber<Integer>() {
-            public void onSubscribe(Subscription subscription) {
-                subscription.request(Integer.MAX_VALUE);
-            }
-            public void onNext(Integer integer) {
-                nums.add(integer);
-            }
-            public void onError(Throwable throwable) {
-                throwable.printStackTrace();
-            }
-            public void onComplete() {}
-        });
+    .subscribe(new Subscriber<Integer>() {
+        public void onSubscribe(Subscription subscription) {
+            subscription.request(Integer.MAX_VALUE);
+        }
+        public void onNext(Integer integer) {
+            nums.add(integer);
+        }
+        public void onError(Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        public void onComplete() {}
+});
 System.out.println(nums);
 // [1, 2, 3, 4]
 ```
@@ -654,21 +642,21 @@ Backpressure kezelése
 
 ```java
 Flux.just(1, 2, 3, 4)
-        .subscribe(new Subscriber<Integer>() {
-                private Subscription subscription;
-                private int onNextAmount;
+    .subscribe(new Subscriber<Integer>() {
+        private Subscription subscription;
+        private int onNextAmount;
 
-                public void onSubscribe(Subscription subscription) {
-                        this.subscription = subscription;
-                        subscription.request(2); // backpressure
-                }
-                public void onNext(Integer integer) {
-                        nums.add(integer);
-                        onNextAmount++;
-                        if (onNextAmount % 2 == 0) subscription.request(2);
-                }
-                // ...
-        });
+        public void onSubscribe(Subscription subscription) {
+            this.subscription = subscription;
+            subscription.request(2); // backpressure
+        }
+        public void onNext(Integer integer) {
+            nums.add(integer);
+            onNextAmount++;
+            if (onNextAmount % 2 == 0) subscription.request(2);
+        }
+        // ...
+});
 ```
 
 ---
