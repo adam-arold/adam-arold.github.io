@@ -118,20 +118,6 @@ Beszúrás elem után  O(N)         O(1)
 
 ---
 
-## ArrayList vs LinkedList
-
-```
-Algoritmus          ArrayList   LinkedList
-Keresés elöl        O(1)         O(1)
-Keresés hátul       O(1)         O(1)
-Keresés indexszel   O(1)         O(N)
-Beszúrás elöl       O(N)         O(1)
-Beszúrás hátul      O(1)         O(1)
-Beszúrás elem után  O(N)         O(1)
-```
-
----
-
 ## TreeSet vs List
 
 ### Beszúrás

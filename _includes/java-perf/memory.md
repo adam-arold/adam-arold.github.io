@@ -331,6 +331,158 @@ Java objektumokat tárol.
 
 ---
 
+## Memory Leak
+
+---
+
+## Memory Leak
+
+- Nem használt objektum, amire van referencia
+
+---
+
+## Memory Leak
+
+- *Nem használt objektum, amire van referencia*
+- Visszavezethető egy GC root-ra
+
+---
+
+## GC Root-ok
+
+---
+
+## GC Root-ok
+
+- Class
+
+---
+
+## GC Root-ok
+
+- *Class*
+- Thread (élő)
+
+---
+
+## GC Root-ok
+
+- *Class*
+- *Thread (élő)*
+- Stack Local
+
+---
+
+## GC Root-ok
+
+- *Class*
+- *Thread (élő)*
+- *Stack Local*
+- JNI Local
+
+---
+
+## GC Root-ok
+
+- *Class*
+- *Thread (élő)*
+- *Stack Local*
+- *JNI Local*
+- Használatban lévő Monitor
+
+---
+
+## GC Root-ok
+
+- *Class*
+- *Thread (élő)*
+- *Stack Local*
+- *JNI Local*
+- *Használatban lévő Monitor*
+- JVM számára fenntartott
+
+---
+
+## A Memory Leak Okai
+
+---
+
+## A Memory Leak Okai
+
+- Végtelen ideig futó Thread
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- Rosszul (vagy nem) implementált `equals`/`hashCode`
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
+- Le nem iratkozott listener
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
+- *Le nem iratkozott listener*
+- `static` mezők
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
+- *Le nem iratkozott listener*
+- *`static` mezők*
+- Be nem zárt erőforrások
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
+- *Le nem iratkozott listener*
+- *`static` mezők*
+- *Be nem zárt erőforrások*
+- Nem `static` inner class-ok
+
+---
+
+## A Memory Leak Okai
+
+- *Végtelen ideig futó Thread*
+- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
+- *Le nem iratkozott listener*
+- *`static` mezők*
+- *Be nem zárt erőforrások*
+- *Nem `static` inner class-ok*
+
+---
+
+## Memory Leak Felderítése
+
+---
+
+## Memory Leak Felderítése
+
+- Profilozás
+- `OutOfMemoryError`
+- Verbose GC
+- Trace analízis
+- `WeakReference` / `SoftReference` / `PhantomReference`
+
+---
+
 ## Off-Heap Adatstruktúrák
 
 Átmenet a Heap és egy in-memory adatbázis között.
