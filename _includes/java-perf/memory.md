@@ -476,9 +476,39 @@ Java objektumokat tárol.
 ## Memory Leak Felderítése
 
 - Profilozás
+
+---
+
+## Memory Leak Felderítése
+
+- *Profilozás*
 - `OutOfMemoryError`
+
+---
+
+## Memory Leak Felderítése
+
+- *Profilozás*
+- *`OutOfMemoryError`*
 - Verbose GC
+
+---
+
+## Memory Leak Felderítése
+
+- *Profilozás*
+- *`OutOfMemoryError`*
+- *Verbose GC*
 - Trace analízis
+
+---
+
+## Memory Leak Felderítése
+
+- *Profilozás*
+- *`OutOfMemoryError`*
+- *Verbose GC*
+- *Trace analízis*
 - `WeakReference` / `SoftReference` / `PhantomReference`
 
 ---
