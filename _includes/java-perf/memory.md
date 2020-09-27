@@ -331,6 +331,12 @@ Java objektumokat tárol.
 
 ---
 
+## Objektumok Memóriaigénye
+
+**(Példa)**
+
+---
+
 ## Memory Leak
 
 ---
@@ -455,17 +461,6 @@ Java objektumokat tárol.
 - *`static` mezők*
 - *Be nem zárt erőforrások*
 - Nem `static` inner class-ok
-
----
-
-## A Memory Leak Okai
-
-- *Végtelen ideig futó Thread*
-- *Rosszul (vagy nem) implementált `equals`/`hashCode`*
-- *Le nem iratkozott listener*
-- *`static` mezők*
-- *Be nem zárt erőforrások*
-- *Nem `static` inner class-ok*
 
 ---
 
