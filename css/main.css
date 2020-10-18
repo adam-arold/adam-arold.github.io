@@ -214,3 +214,10 @@
     float: right;
 }
 
+/* MATHJAX */
+
+li .mjx-chtml {
+  display: inline;
+  text-align: left;
+}
+
