@@ -214,10 +214,16 @@
     float: right;
 }
 
+/* IMG */
+
+.remark-slide-content img {
+  width: 85%;
+}
+
+
 /* MATHJAX */
 
 li .mjx-chtml {
   display: inline;
   text-align: left;
 }
-

@@ -121,9 +121,13 @@ name: owasp10
 
 ---
 
-{% include java-sec/owasp-top10-injection.md %}
-{% include java-sec/owasp-top10-broken-auth.md %}
-{% include java-sec/owasp-top10-sensitive-data-exposure.md %}
-{% include java-sec/owasp-top10-xee.md %}
-{% include java-sec/owasp-top10-broken-access-control.md %}
-{% include java-sec/owasp-top10-misconfig.md %}
+{% include java-sec/owasp-top10/injection.md %}
+{% include java-sec/owasp-top10/broken-auth.md %}
+{% include java-sec/owasp-top10/sensitive-data-exposure.md %}
+{% include java-sec/owasp-top10/xee.md %}
+{% include java-sec/owasp-top10/broken-access-control.md %}
+{% include java-sec/owasp-top10/misconfig.md %}
+{% include java-sec/owasp-top10/xss.md %}
+{% include java-sec/owasp-top10/deserialization.md %}
+{% include java-sec/owasp-top10/known-vulnerabilities.md %}
+{% include java-sec/owasp-top10/insufficient-logging.md %}
