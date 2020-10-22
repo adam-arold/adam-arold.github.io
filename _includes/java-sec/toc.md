@@ -9,5 +9,6 @@ name: toc
 - [Kriptográfia](#cryptography)
 - [A Java Security Services](#java-security-services)
 - [Tipikus Kódolási Hibák](#typical-errors)
+- [Modellek és Eszközök](#models-and-tools)
 
 ---
