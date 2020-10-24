@@ -124,6 +124,7 @@ public void load() throws Exception {
 ```
 
 > Rossz
+>
 > Újfajta kivétel hozzáadása nincs hatással a programra, a típusos kivételek értelmüket vesztik
 
 ---
@@ -135,7 +136,20 @@ public void load() throws Exception {
 ### NullPointerException elkapása
 
 - Nem jó kézi tesztelés helyett
+
+---
+
+### NullPointerException elkapása
+
+- *Nem jó kézi tesztelés helyett*
 - Így nehéz eldönteni honnan kaptuk a kivételt
+
+---
+
+### NullPointerException elkapása
+
+- *Nem jó kézi tesztelés helyett*
+- *Így nehéz eldönteni honnan kaptuk a kivételt*
 - Inkább a hibát oldjuk meg, ami okozza
 
 ---

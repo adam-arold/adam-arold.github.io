@@ -32,7 +32,7 @@
 
 ---
 
-## SQL Injection
+### SQL Injection
 
 ```java
 String userName = ctx.getAuthenticatedUserName();
@@ -45,7 +45,7 @@ ResultSet rs = stmt.execute(query);
 
 ---
 
-## SQL Injection
+### SQL Injection
 
 ```java
 String userName = ctx.getAuthenticatedUserName();
@@ -60,7 +60,7 @@ Elvárt query: `SELECT * FROM items WHERE owner = 'user' AND itemname = 'pen'`
 
 ---
 
-## SQL Injection
+### SQL Injection
 
 ```java
 String userName = ctx.getAuthenticatedUserName();
@@ -81,30 +81,30 @@ SELECT * FROM items WHERE owner = 'user' AND itemname = 'name' OR 'a'='a'
 
 ---
 
-## SQL Injection
+### SQL Injection
 
-### Példa
-
----
-
-## SQL Injection Megoldások
+#### Példa
 
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
+
+---
+
+### SQL Injection Megoldások
 
 - SQL szűrés
 
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
 
 - *SQL szűrés (whitelist/blacklist)*
 - Tárolt eljárások
   
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
 
 - *SQL szűrés (whitelist/blacklist)*
 - *Tárolt eljárások*
@@ -117,7 +117,7 @@ SELECT * FROM items WHERE owner = 'user' AND itemname = 'name' OR 'a'='a'
   
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
 
 - *SQL szűrés (whitelist/blacklist)*
 - *Tárolt eljárások*
@@ -131,7 +131,7 @@ SELECT * FROM items WHERE owner = 'user' AND itemname = 'name' OR 'a'='a'
   
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
 
 - *SQL szűrés (whitelist/blacklist)*
 - *Tárolt eljárások*
@@ -141,7 +141,7 @@ SELECT * FROM items WHERE owner = 'user' AND itemname = 'name' OR 'a'='a'
   
 ---
 
-## SQL Injection Megoldások
+### SQL Injection Megoldások
 
 - *SQL szűrés (whitelist/blacklist)*
 - *Tárolt eljárások*
@@ -152,13 +152,13 @@ SELECT * FROM items WHERE owner = 'user' AND itemname = 'name' OR 'a'='a'
   
 ---
 
-## Egyéb Injection problémák
+### Egyéb Injection problémák
 
 ---
 
-## Egyéb Injection problémák
+### Egyéb Injection problémák
 
-### Command Injection
+#### Command Injection
 
 ```java
 String btype = request.getParameter("backuptype");
@@ -168,9 +168,9 @@ System.Runtime.getRuntime().exec(cmd);
 ```
 ---
 
-## Egyéb Injection problémák
+### Egyéb Injection problémák
 
-### Command Injection
+#### Command Injection
 
 ```java
 String btype = request.getParameter("backuptype");
@@ -183,9 +183,9 @@ Várt végeredmény: `/usr/bin/backup.sh FULL & /usr/bin/cleanup.sh`
 
 ---
 
-## Egyéb Injection problémák
+### Egyéb Injection problémák
 
-### Command Injection
+#### Command Injection
 
 ```java
 String btype = request.getParameter("backuptype");
@@ -200,29 +200,29 @@ Ha `backuptype`=`FULL & rm -rf *",`, akkor `/usr/bin/backup.sh FULL & rm -rf * &
 
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - Képfeldolgozó program
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - Sok platform használja (pl PHP és Node.js)
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - *Sok platform használja (pl PHP és Node.js)*
 - Delegate szolgáltatás nem szűrt megfelelően (külső program futtatása)
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - *Sok platform használja (pl PHP és Node.js)*
@@ -230,7 +230,7 @@ Ha `backuptype`=`FULL & rm -rf *",`, akkor `/usr/bin/backup.sh FULL & rm -rf * &
 - `"wget" -q -O "%o" "https:%M"` (`%M` a sérülékeny paraméter)
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - *Sok platform használja (pl PHP és Node.js)*
@@ -239,7 +239,7 @@ Ha `backuptype`=`FULL & rm -rf *",`, akkor `/usr/bin/backup.sh FULL & rm -rf * &
 - Ha a paraméter `https://example.com";|ls "-la`
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - *Sok platform használja (pl PHP és Node.js)*
@@ -249,7 +249,7 @@ Ha `backuptype`=`FULL & rm -rf *",`, akkor `/usr/bin/backup.sh FULL & rm -rf * &
 - A futtatott parancs: `"wget" –q –O "%o" "https://example.com";|ls "-la"`
 ---
 
-## Case Study: ImageMagick
+### Case Study: ImageMagick
 
 - *Képfeldolgozó program*
 - *Sok platform használja (pl PHP és Node.js)*

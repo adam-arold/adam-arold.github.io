@@ -43,19 +43,13 @@
 
 ---
 
-## Cross-Site Scripting (XSS)
-
 ### Példa: Reflected XSS
 
 ---
 
-## Cross-Site Scripting (XSS)
-
 ### Megoldások
 
 ---
-
-## Cross-Site Scripting (XSS)
 
 ### Megoldások
 
@@ -63,16 +57,12 @@
 
 ---
 
-## Cross-Site Scripting (XSS)
-
 ### Megoldások
 
 - *Escaping*
 - Whitelisting
 
 ---
-
-## Cross-Site Scripting (XSS)
 
 ### Megoldások
 

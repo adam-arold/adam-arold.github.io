@@ -43,21 +43,15 @@
 
 ---
 
-## Security Misconfiguration
-
 ### Példa: túl nagy fájl feltöltése
 
 ---
-
-## Security Misconfiguration
 
 ### Megoldások
 
 - Egységesített konfiguráció kezelés
 
 ---
-
-## Security Misconfiguration
 
 ### Megoldások
 
@@ -66,8 +60,6 @@
 
 ---
 
-## Security Misconfiguration
-
 ### Megoldások
 
 - *Egységesített konfiguráció kezelés*
@@ -75,8 +67,6 @@
 - Gyakori update-k
 
 ---
-
-## Security Misconfiguration
 
 ### Megoldások
 
@@ -87,8 +77,6 @@
 
 ---
 
-## Security Misconfiguration
-
 ### Megoldások
 
 - *Egységesített konfiguráció kezelés*
@@ -98,8 +86,6 @@
 - Konfiguráció ellenőrzése
 
 ---
-
-## Security Misconfiguration
 
 ### Megoldások
 
@@ -112,8 +98,6 @@
 
 ---
 
-## Security Misconfiguration
-
 ### Megoldások
 
 - *Egységesített konfiguráció kezelés*
@@ -125,8 +109,6 @@
 - Authorizáció ellenőrzése
 
 ---
-
-## Security Misconfiguration
 
 ### Megoldások
 

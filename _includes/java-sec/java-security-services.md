@@ -157,7 +157,6 @@ name: java-security-services
 ### Java Generic Security Service
 
 - API, mely lehetővé teszi biztonsági protokollok használatát (pl. Kerberos)
-- 
 
 ---
 
@@ -165,7 +164,6 @@ name: java-security-services
 
 - *API, mely lehetővé teszi biztonsági protokollok használatát (pl. Kerberos)*
 - Segít az alkalmazáslogikát elválasztani biztonsági mechanizmusoktól
-- 
 
 ---
 
@@ -174,7 +172,6 @@ name: java-security-services
 - *API, mely lehetővé teszi biztonsági protokollok használatát (pl. Kerberos)*
 - *Segít az alkalmazáslogikát elválasztani biztonsági mechanizmusoktól*
 - Kommunikációt tesz lehetővé más GSS felhasználókkal
-- 
 
 ---
 
@@ -184,7 +181,6 @@ name: java-security-services
 - *Segít az alkalmazáslogikát elválasztani biztonsági mechanizmusoktól*
 - *Kommunikációt tesz lehetővé más GSS felhasználókkal*
 - Általában hálózaton keresztül működik
-- 
 
 ---
 
@@ -195,7 +191,6 @@ name: java-security-services
 - *Kommunikációt tesz lehetővé más GSS felhasználókkal*
 - *Általában hálózaton keresztül működik*
 - Provider alapú architektúra
-- 
 
 ---
 
@@ -207,7 +202,6 @@ name: java-security-services
 - *Általában hálózaton keresztül működik*
 - *Provider alapú architektúra*
 - JCA-t használ a háttérben
-- 
 
 ---
 

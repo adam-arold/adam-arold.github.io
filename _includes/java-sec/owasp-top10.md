@@ -6,14 +6,14 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - Injection
   > Nem megbízható adat (SQL, NoSQL, LDAP) interpretálása parancsként
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - Broken Authentication
@@ -21,7 +21,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -30,7 +30,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -40,7 +40,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -51,7 +51,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -63,7 +63,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -76,7 +76,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -90,7 +90,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*
@@ -105,7 +105,7 @@ name: owasp10
 
 ---
 
-## OWASP Top 10
+# OWASP Top 10
 
 - *Injection*
 - *Broken Authentication*

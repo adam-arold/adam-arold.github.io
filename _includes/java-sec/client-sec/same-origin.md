@@ -48,6 +48,121 @@ Két **origin** akkor egyezik meg, ha a 3 komponensük ugyanaz (protokoll, domai
 
 | URL | Eredmény | Ok |
 |-----|----------|----|
+| `http://store.company.com/dir2/other.html` | | |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` |  |  |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+| `https://store.company.com/page.html` | |  |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+| `https://store.company.com/page.html` | Hiba | Más protokoll |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+| `https://store.company.com/page.html` | Hiba | Más protokoll |
+| `http://store.company.com:81/dir/page.html`  |  |  |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+| `https://store.company.com/page.html` | Hiba | Más protokoll |
+| `http://store.company.com:81/dir/page.html`  | Hiba | Különböző port (`80` az alapértelmezett http esetén) |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
+| `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
+| `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
+| `https://store.company.com/page.html` | Hiba | Más protokoll |
+| `http://store.company.com:81/dir/page.html`  | Hiba | Különböző port (`80` az alapértelmezett http esetén) |
+| `http://news.company.com/dir/page.html`  |  |  |
+
+---
+
+### Same Origin Példák
+
+**Origin:** http://store.company.com/dir/page.html
+
+
+| URL | Eredmény | Ok |
+|-----|----------|----|
 | `http://store.company.com/dir2/other.html` | OK | Csak a path különböző |
 | `http://store.company.com/dir/inner/another.html` | OK | Csak a path különböző |
 | `https://store.company.com/page.html` | Hiba | Más protokoll |

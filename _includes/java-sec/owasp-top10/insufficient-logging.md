@@ -3,24 +3,24 @@
 
 ---
 
-## Miért Fontos?
+### Miért Fontos?
 
 ---
 
-## Miért Fontos?
+### Miért Fontos?
 
 - A legtöbb támadás szondázással kezdődik
 
 ---
 
-## Miért Fontos?
+### Miért Fontos?
 
 - *A legtöbb támadás szondázással kezdődik*
 - 2016-ban egy rés megtalálása átlagosan 191 nap volt
 
 ---
 
-## Miért Fontos?
+### Miért Fontos?
 
 - *A legtöbb támadás szondázással kezdődik*
 - *2016-ban egy rés megtalálása átlagosan 191 nap volt*
@@ -28,7 +28,7 @@
 
 ---
 
-## Miért Fontos?
+### Miért Fontos?
 
 - *A legtöbb támadás szondázással kezdődik*
 - *2016-ban egy rés megtalálása átlagosan 191 nap volt*
@@ -37,20 +37,20 @@
 
 ---
 
-## Megoldások
+### Megoldások
 
 - Bejelentkezési hibák loggolása és korlátozása
 
 ---
 
-## Megoldások
+### Megoldások
 
 - *Bejelentkezési hibák loggolása és korlátozása*
 - Authorizációs hibák kezelése
 
 ---
 
-## Megoldások
+### Megoldások
 
 - *Bejelentkezési hibák loggolása és korlátozása*
 - *Authorizációs hibák kezelése*
@@ -58,7 +58,7 @@
 
 ---
 
-## Megoldások
+### Megoldások
 
 - *Bejelentkezési hibák loggolása és korlátozása*
 - *Authorizációs hibák kezelése*
@@ -67,7 +67,7 @@
 
 ---
 
-## Megoldások
+### Megoldások
 
 - *Bejelentkezési hibák loggolása és korlátozása*
 - *Authorizációs hibák kezelése*
@@ -77,7 +77,7 @@
 
 ---
 
-## Megoldások
+### Megoldások
 
 - *Bejelentkezési hibák loggolása és korlátozása*
 - *Authorizációs hibák kezelése*

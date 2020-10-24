@@ -3,34 +3,44 @@
 
 ---
 
-## Session Kezelés
-
-### Session Hijacking
-
-A session azonosító a támadó birtokába jut, így a felhasználó megszemélyesíthető
+### Session Kezelés
 
 ---
 
-## Session Kezelés
+### Session Kezelés
 
-### Session Hijacking
+#### Session Hijacking
+
+> A session azonosító a támadó birtokába jut, így a felhasználó megszemélyesíthető
+
+---
+
+### Session Kezelés
+
+#### Session Hijacking
+
+> A session azonosító a támadó birtokába jut, így a felhasználó megszemélyesíthető
 
 - Packet sniffing (nem titkosított)
 
 ---
 
-## Session Kezelés
+### Session Kezelés
 
-### Session Hijacking
+#### Session Hijacking
+
+> A session azonosító a támadó birtokába jut, így a felhasználó megszemélyesíthető
 
 - *Packet sniffing (nem titkosított)*
 - Cookie kiolvasása (XSS)
 
 ---
 
-## Session Kezelés
+### Session Kezelés
 
-### Session Hijacking
+#### Session Hijacking
+
+> A session azonosító a támadó birtokába jut, így a felhasználó megszemélyesíthető
 
 - *Packet sniffing (nem titkosított)*
 - *Cookie kiolvasása (XSS)*
@@ -38,38 +48,44 @@ A session azonosító a támadó birtokába jut, így a felhasználó megszemél
 
 ---
 
-## Session Kezelés
+### Session Kezelés
 
-### Session Fixation
+#### Session Fixation
 
-A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek végrehajtására (phishing)
-
----
-
-## Session Kezelési Praktikák
+> A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek végrehajtására (phishing)
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+---
+
+### Session Kezelési Praktikák
+
+#### Session Létrehozás
+
+---
+
+### Session Kezelési Praktikák
+
+#### Session Létrehozás
 
 - Megfelelő Session azonosító létrehozása
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+#### Session Létrehozás
 
 - *Megfelelő Session azonosító létrehozása*
   - Legalább 128 bites
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+#### Session Létrehozás
 
 - *Megfelelő Session azonosító létrehozása*
   - *Legalább 128 bites*
@@ -77,9 +93,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+#### Session Létrehozás
 
 - *Megfelelő Session azonosító létrehozása*
   - *Legalább 128 bites*
@@ -88,9 +104,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+#### Session Létrehozás
 
 - *Megfelelő Session azonosító létrehozása*
   - *Legalább 128 bites*
@@ -100,9 +116,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Session Létrehozás
+#### Session Létrehozás
 
 - *Megfelelő Session azonosító létrehozása*
   - *Legalább 128 bites*
@@ -113,32 +129,32 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Authentikáció Után
+#### Authentikáció Után
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Authentikáció Után
+#### Authentikáció Után
 
 - Mindig hozzunk létre új azonosítót
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Authentikáció Után
+#### Authentikáció Után
 
 - *Mindig hozzunk létre új azonosítót*
 - Az összes adatot másoljuk át az új session-ba
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Authentikáció Után
+#### Authentikáció Után
 
 - *Mindig hozzunk létre új azonosítót*
 - *Az összes adatot másoljuk át az új session-ba*
@@ -146,24 +162,24 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 - Használjuk a `Secure` attribútumot
   > Nem enged titkosítás nélküli kapcsolatot
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 - *Használjuk a `Secure` attribútumot*
 - Használjuk a `HttpOnly` attribútumot
@@ -171,9 +187,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 - *Használjuk a `Secure` attribútumot*
 - *Használjuk a `HttpOnly` attribútumot*
@@ -182,9 +198,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 - *Használjuk a `Secure` attribútumot*
 - *Használjuk a `HttpOnly` attribútumot*
@@ -193,9 +209,9 @@ A támadó létrehoz egy session-t amivel ráveszi az áldozatot műveletek vég
 
 ---
 
-## Session Kezelési Praktikák
+### Session Kezelési Praktikák
 
-### Cookie Kezelés
+#### Cookie Kezelés
 
 ```java
 Cookie cookie = new Cookie("myvar", "xyz");
@@ -211,30 +227,30 @@ Set-Cookie: myvar=xyz; Domain=example.com; Secure; HttpOnly;
 
 ---
 
-## Credential Stuffing
+### Credential Stuffing
 
 A támadó (lopott) felhasználó/jelszó párosokat próbál végig
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - 2FA használata
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - *2FA használata*
 - Alapértelmezett jelszavak kerülése
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - *2FA használata*
 - *Alapértelmezett jelszavak kerülése*
@@ -242,7 +258,7 @@ A támadó (lopott) felhasználó/jelszó párosokat próbál végig
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - *2FA használata*
 - *Alapértelmezett jelszavak kerülése*
@@ -251,7 +267,7 @@ A támadó (lopott) felhasználó/jelszó párosokat próbál végig
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - *2FA használata*
 - *Alapértelmezett jelszavak kerülése*
@@ -261,7 +277,7 @@ A támadó (lopott) felhasználó/jelszó párosokat próbál végig
 
 ---
 
-## Authentikációs Megoldások
+### Authentikációs Megoldások
 
 - *2FA használata*
 - *Alapértelmezett jelszavak kerülése*
@@ -272,8 +288,8 @@ A támadó (lopott) felhasználó/jelszó párosokat próbál végig
 
 ---
 
-## Brute Force Authentikáció
+### Brute Force Authentikáció
 
-### Példa
+#### Példa
 
 ---

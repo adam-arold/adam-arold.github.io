@@ -3,17 +3,17 @@
 
 ---
 
-## Mi az a Deserialization?
+### Mi az a Deserialization?
 
 ---
 
-## Mi az a Deserialization?
+### Mi az a Deserialization?
 
 - Hálózaton küldött adatok "kicsomagolása"
 
 ---
 
-## Mi az a Deserialization?
+### Mi az a Deserialization?
 
 - *Hálózaton küldött adatok "kicsomagolása"*
 - Sokféle formátum létezik
@@ -26,24 +26,24 @@
 
 ---
 
-## Deserialization Problémák
+### Deserialization Problémák
 
 ---
 
-## Deserialization Problémák
+### Deserialization Problémák
 
 - Megbízunk a kliensben
 
 ---
 
-## Deserialization Problémák
+### Deserialization Problémák
 
 - *Megbízunk a kliensben*
 - Nem ellenőrizzük a kicsomagolt adatot
 
 ---
 
-## Deserialization Problémák
+### Deserialization Problémák
 
 - *Megbízunk a kliensben*
 - *Nem ellenőrizzük a kicsomagolt adatot*
@@ -51,7 +51,7 @@
 
 ---
 
-## Deserialization Problémák
+### Deserialization Problémák
 
 - *Megbízunk a kliensben*
 - *Nem ellenőrizzük a kicsomagolt adatot*
@@ -60,30 +60,30 @@
 
 ---
 
-## Deserialization Példa
+### Deserialization Példa
 
-### Mass Assignment
-
----
-
-## Deserialization Megoldások
+#### Mass Assignment
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
+
+---
+
+### Deserialization Megoldások
 
 - DTO használata
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
 
 - *DTO használata*
 - Ne csomagoljunk ki root-ként
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
 
 - *DTO használata*
 - *Ne csomagoljunk ki root-ként*
@@ -91,7 +91,7 @@
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
 
 - *DTO használata*
 - *Ne csomagoljunk ki root-ként*
@@ -100,7 +100,7 @@
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
 
 - *DTO használata*
 - *Ne csomagoljunk ki root-ként*
@@ -110,7 +110,7 @@
 
 ---
 
-## Deserialization Megoldások
+### Deserialization Megoldások
 
 - *DTO használata*
 - *Ne csomagoljunk ki root-ként*

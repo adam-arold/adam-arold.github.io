@@ -303,15 +303,7 @@ Egyes üzenetek rejtjelezésére használható
 
 Az algoritmus ismétlésével sok blokkos üzenet titkosítására használható
 
-![CBC](/assets/img/CBC_0.svg)
-
----
-
-### Cipher Block Chaining (CBC)
-
-Az algoritmus ismétlésével sok blokkos üzenet titkosítására használható
-
-![CBC](/assets/img/CBC_1.svg)
+![CBC](/assets/img/CBC.svg)
 
 ---
 
@@ -626,6 +618,12 @@ Streamekre használható, párhuzamosítható
 ### Men in the Middle Támadás
 
 ![MitM](/assets/img/mitm_0.svg)
+
+---
+
+### Men in the Middle Támadás
+
+![MitM](/assets/img/mitm_1.svg)
 
 ---
 

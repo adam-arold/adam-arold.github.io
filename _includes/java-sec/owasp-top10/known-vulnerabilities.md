@@ -33,8 +33,6 @@
 
 ---
 
-## Known Vulnerabilities
-
 ### Példa: támadható Spring függőségek
 
 ---

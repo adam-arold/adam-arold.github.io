@@ -57,19 +57,13 @@
 
 ---
 
-## Broken Access Control
-
 ### Példa: BOLA
 
 ---
 
-## Broken Access Control
-
 ### Megoldások
 
 ---
-
-## Broken Access Control
 
 ### Megoldások
 
@@ -77,16 +71,12 @@
 
 ---
 
-## Broken Access Control
-
 ### Megoldások
 
 - *Whitelistelés, blacklistelés helyett*
 - ACL, ABAC, RBAC, RADAC
 
 ---
-
-## Broken Access Control
 
 ### Megoldások
 
@@ -96,8 +86,6 @@
 
 ---
 
-## Broken Access Control
-
 ### Megoldások
 
 - *Whitelistelés, blacklistelés helyett*
@@ -106,8 +94,6 @@
 - Rate limiting
 
 ---
-
-## Broken Access Control
 
 ### Megoldások
 

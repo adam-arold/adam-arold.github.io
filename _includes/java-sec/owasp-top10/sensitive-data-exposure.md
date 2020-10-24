@@ -66,15 +66,11 @@
 
 ---
 
-## Sensitive Data Exposure
-
 ### HTTPS használata
 
 - Az SSL nem megbízható, használjunk TLS-t
 
 ---
-
-## Sensitive Data Exposure
 
 ### HTTPS használata
 
@@ -82,8 +78,6 @@
 - Kerüljük a gyenge algoritmusokat (DES)
 
 ---
-
-## Sensitive Data Exposure
 
 ### HTTPS használata
 
@@ -93,8 +87,6 @@
 
 ---
 
-## Sensitive Data Exposure
-
 ### HTTPS használata
 
 - *Az SSL nem megbízható, használjunk TLS-t*
@@ -103,8 +95,6 @@
 - Ne engedjük a HTTP-t: HSTS
 
 ---
-
-## Sensitive Data Exposure
 
 ### HTTPS használata
 
@@ -115,8 +105,6 @@
   - Headerben: `Strict-Transport-Security: max-age=60000; includeSubDomains`
 
 ---
-
-## Sensitive Data Exposure
 
 ### HTTPS használata
 
@@ -136,8 +124,6 @@
 
 ---
 
-## Sensitive Data Exposure
-
-### Példa
+### Sensitive Data Exposure Példa
 
 ---

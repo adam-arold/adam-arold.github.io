@@ -54,8 +54,6 @@
 
 ---
 
-## XML External Entities (XEE)
-
 ### Példa: XML Bomb
 
 ```xml
@@ -72,8 +70,6 @@
 ```
 
 ---
-
-## XML External Entities (XEE)
 
 ### Példa: XML Bomb
 
@@ -94,8 +90,6 @@
 
 ---
 
-## XML External Entities (XEE)
-
 ### Példa: külső fájl
 
 ```xml
@@ -110,8 +104,6 @@
 ```
 
 ---
-
-## XML External Entities (XEE)
 
 ### Példa: külső fájl
 
@@ -131,27 +123,40 @@
 
 ---
 
-## XML External Entities (XEE)
-
 ### Példa: Billion Laughs
 
 ---
-
-## XML External Entities (XEE)
 
 ### Példa: Expose Local File
 
 ---
 
-## XEE Megoldások
+### XEE Megoldások
 
-- Secure mód
-  ```java
-  dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
-  ```
-- DTD letiltása
-  ```java
-  dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
-  ```
+---
+
+### XEE Megoldások
+
+Secure mód
+
+```java
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+```
+
+---
+
+### XEE Megoldások
+
+Secure mód
+
+```java
+dbf.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
+```
+
+DTD letiltása
+
+```java
+dbf.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+```
 
 ---
