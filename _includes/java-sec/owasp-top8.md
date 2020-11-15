@@ -90,37 +90,6 @@ name: owasp10
 
 ---
 
-# OWASP Top 10
-
-- *Injection*
-- *Broken Authentication*
-- *Sensitive Data Exposure*
-- *XML External Entities (XEE)*
-- *Broken Access Control*
-- *Security Misconfiguration*
-- *Cross-Site Scripting (XSS)*
-- *Insecure Deserialization*
-- Using Components with Known Vulnerabilities
-  > Mások által írt támadható kódok futtatása
-
----
-
-# OWASP Top 10
-
-- *Injection*
-- *Broken Authentication*
-- *Sensitive Data Exposure*
-- *XML External Entities (XEE)*
-- *Broken Access Control*
-- *Security Misconfiguration*
-- *Cross-Site Scripting (XSS)*
-- *Insecure Deserialization*
-- *Using Components with Known Vulnerabilities*
-- Insufficient Logging & Monitoring
-  > Támadások nem megfelelő, vagy hiányos észlelése
-
----
-
 {% include java-sec/owasp-top10/injection.md %}
 {% include java-sec/owasp-top10/broken-auth.md %}
 {% include java-sec/owasp-top10/sensitive-data-exposure.md %}
@@ -129,5 +98,3 @@ name: owasp10
 {% include java-sec/owasp-top10/misconfig.md %}
 {% include java-sec/owasp-top10/xss.md %}
 {% include java-sec/owasp-top10/deserialization.md %}
-{% include java-sec/owasp-top10/known-vulnerabilities.md %}
-{% include java-sec/owasp-top10/insufficient-logging.md %}
