@@ -222,7 +222,7 @@ export default Urgency;
 
   > Here we can talk about Bootstrap a bit, and why was it chosen.
 
-    ```html
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -264,7 +264,7 @@ export default Urgency;
         <script src="./App.js"></script>
     </body>
 </html>
-    ```
+```
 
     and also refactor `Box`:
 
